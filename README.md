@@ -1,9 +1,10 @@
 Wrapper of [GPT-Engineer](https://github.com/AntonOsika/gpt-engineer) - built specifically for games
 
-##Inspiration
+Inspiration
+
 The inspiration behind GameGPT stems from the desire to create a personalized and engaging gaming experience for every individual. We recognized that while the gaming industry offers a vast array of games, there is often a gap between the games available and what players truly desire. GameGPT was conceived to bridge this gap, offering a unique solution that generates custom-made games that players genuinely want to play.
 
-##Installation
+Installation
 
 This is how you use GameGPT:
 
@@ -17,7 +18,8 @@ python -m pip install -e .
 3. Run ```gpt-engineer <project_dir>``` with a relative path to your folder
 4. For example: ```gpt-engineer projects/my-new-project``` from the game-engineer directory root with your new folder in projects/
 
-##What it does
+What it does
+
 GameGPT is an innovative application that utilizes the power of artificial intelligence and natural language processing to craft personalized gaming experiences. The core functionality of GameGPT includes:
 
 User Profiling: GameGPT starts by understanding the player's preferences, gaming style, and interests through interactive conversations. It gathers information to create a unique player profile.
@@ -32,7 +34,8 @@ Multi-Platform Support: GameGPT provides games for a variety of platforms, inclu
 
 Feedback Loop: GameGPT encourages players to provide feedback and rate the games they play, allowing for continuous improvement and better-tailored game recommendations.
 
-##How we built it
+How we built it
+
 GameGPT is a result of the collaborative efforts of a multi-disciplinary team. The key components and technologies used in building GameGPT include:
 
 GPT-3.5 AI Model: The foundation of GameGPT's game generation is the advanced GPT-3.5 language model, which is fine-tuned specifically for game design and narrative generation.
@@ -45,7 +48,8 @@ Artificial Intelligence for Graphics: GameGPT utilizes AI algorithms for generat
 
 Player Feedback Mechanism: We incorporated a feedback loop where player feedback is analyzed to enhance the quality and relevance of generated games.
 
-##Challenges we ran into
+Challenges we ran into
+
 The development of GameGPT came with its share of challenges:
 
 AI Training and Fine-Tuning: Fine-tuning GPT-3.5 for game-related content required a significant amount of data and fine-tuning efforts.
@@ -58,7 +62,8 @@ Scaling and Server Load: Handling the application's scalability and server load 
 
 Content Quality: Ensuring the quality of generated game content and narratives was an ongoing challenge to meet player expectations.
 
-##Accomplishments that we're proud of
+Accomplishments that we're proud of
+
 Throughout the development of GameGPT, we achieved several notable accomplishments:
 
 Personalized Gaming: GameGPT successfully delivers personalized gaming experiences, creating a sense of connection and engagement for players.
@@ -71,7 +76,8 @@ AI-Driven Art and Graphics: The application's AI-driven art and graphics have be
 
 Continuous Improvement: The feedback loop within GameGPT allows us to continuously improve the game generation process and enhance user experiences.
 
-##What we learned
+What we learned
+
 The journey of building GameGPT has been a profound learning experience. We've learned:
 
 AI in Game Design: The potential of AI in game design and storytelling is vast, and it can significantly enhance user engagement.
@@ -84,7 +90,8 @@ Iterative Development: The value of an iterative development process, constantly
 
 Cross-Disciplinary Collaboration: The power of collaboration among experts in AI, game development, art, and user experience design.
 
-##What's next for GameGPT
+What's next for GameGPT
+
 The journey for GameGPT is far from over. The roadmap for GameGPT includes:
 
 Expansion of Game Library: We aim to continually expand the library of games, including partnerships with independent game developers to provide a diverse range of gaming experiences.
