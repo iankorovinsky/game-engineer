@@ -14,7 +14,7 @@ python -m pip install -e .
 ```
 1. Create an empty folder for your project anywhere on your computer
 2. Create a file called prompt (no extension) inside your new folder and fill it with instructions
-3. Run ```gpt-engineer <project_dir>`````` with a relative path to your folder
+3. Run ```gpt-engineer <project_dir>``` with a relative path to your folder
 4. For example: ```gpt-engineer projects/my-new-project``` from the game-engineer directory root with your new folder in projects/
 
 ##What it does
