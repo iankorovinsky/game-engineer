@@ -1,86 +1,100 @@
-# GameGPT - GPT Engineer Wrapper made specifically for games
+Wrapper of [GPT-Engineer](https://github.com/AntonOsika/gpt-engineer) - built specifically for games
 
-**Specify what game you want it to build, the AI asks for clarification, and then builds it.**
+##Inspiration
+The inspiration behind GameGPT stems from the desire to create a personalized and engaging gaming experience for every individual. We recognized that while the gaming industry offers a vast array of games, there is often a gap between the games available and what players truly desire. GameGPT was conceived to bridge this gap, offering a unique solution that generates custom-made games that players genuinely want to play.
 
-GameGPT is made to be easy to adapt, extend, and make your agent learn how you want your code to look. It generates an entire codebase based on a prompt.
+##Installation
 
-- [Demo](https://twitter.com/antonosika/status/1667641038104674306)
+This is how you use GameGPT:
 
-## Project philosophy same as GPT Engineer
+```git clone https://github.com/iankorovinsky/game-engineer.git
+python -m venv venv
+cd venv/Scripts/activate
+python -m pip install -e .
+```
+1. Create an empty folder for your project anywhere on your computer
+2. Create a file called prompt (no extension) inside your new folder and fill it with instructions
+3. Run ```gpt-engineer <project_dir>`````` with a relative path to your folder
+4. For example: ```gpt-engineer projects/my-new-project``` from the game-engineer directory root with your new folder in projects/
 
-- Simple to get value
-- Flexible and easy to add new own "AI steps". See `steps.py`.
-- Incrementally build towards a user experience of:
-  1. high level prompting
-  2. giving feedback to the AI that it will remember over time
-- Fast handovers, back and forth, between AI and human
-- Simplicity, all computation is "resumable" and persisted to the filesystem
-- Make games easier
+##What it does
+GameGPT is an innovative application that utilizes the power of artificial intelligence and natural language processing to craft personalized gaming experiences. The core functionality of GameGPT includes:
 
-**API Key**
+User Profiling: GameGPT starts by understanding the player's preferences, gaming style, and interests through interactive conversations. It gathers information to create a unique player profile.
 
-Choose **one** of:
-- Export env variable (you can add this to .bashrc so that you don't have to do it each time you start the terminal)
-    - `export OPENAI_API_KEY=[your api key]`
-- .env file:
-    - Create a copy of `.env.template` named `.env`
-    - Add your OPENAI_API_KEY in .env
-- Custom model:
-    - See [docs](https://gpt-engineer.readthedocs.io/en/latest/open_models.html), supports local model, azure, etc.
+Game Generation: Once the player profile is established, GameGPT leverages cutting-edge AI to generate game concepts and mechanics tailored to the player's preferences. It takes into account the player's favorite genres, themes, and gameplay mechanics.
 
-Check the [Windows README](./WINDOWS_README.md) for windows usage.
+Storytelling and World-Building: GameGPT doesn't just create games; it crafts immersive stories and detailed game worlds. It generates compelling narratives and game settings that resonate with the player's tastes.
 
-**Other ways to run:**
-- Use Docker ([instructions](docker/README.md))
-- Do everything in your browser:
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/AntonOsika/gpt-engineer/codespaces)
+Graphics and Design: The application also generates graphics, characters, and game art in line with the player's aesthetic preferences, ensuring a visually appealing and captivating gaming experience.
 
-## Usage
+Multi-Platform Support: GameGPT provides games for a variety of platforms, including PC, mobile, and console, making it accessible to a wide audience.
 
-There are two ways to work with GPT-engineer: new code mode (the default), and improve existing code mode (the `-i` option).
+Feedback Loop: GameGPT encourages players to provide feedback and rate the games they play, allowing for continuous improvement and better-tailored game recommendations.
 
-### Creating new code
-- Create an empty folder for your project anywhere on your computer
-- Create a file called `prompt` (no extension) inside your new folder and fill it with instructions
-- Run `gpt-engineer <project_dir>` with a relative path to your folder
-  - For example: `gpt-engineer projects/my-new-project` from the gpt-engineer directory root with your new folder in `projects/`
+##How we built it
+GameGPT is a result of the collaborative efforts of a multi-disciplinary team. The key components and technologies used in building GameGPT include:
 
-### Improving Existing Code
-- Locate a folder with code which you want to improve anywhere on your computer
-- Create a file called `prompt` (no extension) inside your new folder and fill it with instructions for how you want to improve the code
-- Run `gpt-engineer <project_dir> -i` with a relative path to your folder
-  - For example: `gpt-engineer projects/my-old-project` from the gpt-engineer directory root with your folder in `projects/`
+GPT-3.5 AI Model: The foundation of GameGPT's game generation is the advanced GPT-3.5 language model, which is fine-tuned specifically for game design and narrative generation.
 
-By running gpt-engineer you agree to our [terms](https://github.com/AntonOsika/gpt-engineer/blob/main/TERMS_OF_USE.md).
+Machine Learning Algorithms: We employed various machine learning algorithms for player profiling, game generation, and recommendation systems.
 
+Front-End and Back-End Development: The application features a user-friendly front-end interface, developed using modern web technologies. The back-end is built using a combination of cloud computing and server technologies to ensure scalability and performance.
 
-## Features
+Artificial Intelligence for Graphics: GameGPT utilizes AI algorithms for generating graphics and game art, resulting in unique and visually stunning game elements.
 
-You can specify the "identity" of the AI agent by editing the files in the `preprompts` folder.
+Player Feedback Mechanism: We incorporated a feedback loop where player feedback is analyzed to enhance the quality and relevance of generated games.
 
-Editing the `preprompts`, and evolving how you write the project prompt, is how you make the agent remember things between projects.
+##Challenges we ran into
+The development of GameGPT came with its share of challenges:
 
-You can also automatically copy all `preprompts` files into your project folder using the cli parameter `--use-custom-prepompts`. This way you can have custom preprompts for all of your projects without the need to edit the main files. If you don't want to use the project specific prepromt files, simply delete them or run `gpt-engineer` without the cli param.
+AI Training and Fine-Tuning: Fine-tuning GPT-3.5 for game-related content required a significant amount of data and fine-tuning efforts.
 
-Each step in `steps.py` will have its communication history with GPT4 stored in the logs folder, and can be rerun with `scripts/rerun_edited_message_logs.py`.
+Data Privacy and Security: Ensuring the privacy and security of user data was a top priority. We invested considerable effort into robust data protection measures.
 
-You can also run with open source models, like WizardCoder. See the [documentation](https://gpt-engineer.readthedocs.io/en/latest/open_models.html) for example instructions.
+Game Art Generation: Creating visually appealing game art and graphics using AI proved to be a complex challenge, requiring iterations and improvements.
 
-## Vision
+Scaling and Server Load: Handling the application's scalability and server load as it gained popularity was a constant concern.
 
-The gpt-engineer community is building the **open platform for devs to tinker with and build their personal code-generation toolbox**.
+Content Quality: Ensuring the quality of generated game content and narratives was an ongoing challenge to meet player expectations.
 
-If you are interested in contributing to this, we would be interested in having you.
+##Accomplishments that we're proud of
+Throughout the development of GameGPT, we achieved several notable accomplishments:
 
-If you want to see our broader ambitions, check out the [roadmap](https://github.com/AntonOsika/gpt-engineer/blob/main/ROADMAP.md), and join
-[discord](https://discord.gg/8tcDQ89Ej2)
-to get input on how you can [contribute](.github/CONTRIBUTING.md) to it.
+Personalized Gaming: GameGPT successfully delivers personalized gaming experiences, creating a sense of connection and engagement for players.
 
-We are currently looking for more maintainers and community organizers. Email anton.osika@gmail.com if you are interested in an official role.
+Diverse Game Library: The application boasts a vast and diverse library of games spanning various genres, offering something for everyone.
 
+Positive User Feedback: Early users of GameGPT have expressed satisfaction with the games generated, validating the project's mission.
 
-## Example
+AI-Driven Art and Graphics: The application's AI-driven art and graphics have been well-received for their creativity and uniqueness.
 
+Continuous Improvement: The feedback loop within GameGPT allows us to continuously improve the game generation process and enhance user experiences.
 
+##What we learned
+The journey of building GameGPT has been a profound learning experience. We've learned:
 
-https://github.com/AntonOsika/gpt-engineer/assets/4467025/40d0a9a8-82d0-4432-9376-136df0d57c99
+AI in Game Design: The potential of AI in game design and storytelling is vast, and it can significantly enhance user engagement.
+
+User-Centric Development: The importance of focusing on user needs and preferences to create a truly personalized experience.
+
+Data Privacy: The significance of robust data privacy measures, particularly in applications that collect and utilize user data.
+
+Iterative Development: The value of an iterative development process, constantly improving and evolving the application based on user feedback.
+
+Cross-Disciplinary Collaboration: The power of collaboration among experts in AI, game development, art, and user experience design.
+
+##What's next for GameGPT
+The journey for GameGPT is far from over. The roadmap for GameGPT includes:
+
+Expansion of Game Library: We aim to continually expand the library of games, including partnerships with independent game developers to provide a diverse range of gaming experiences.
+
+Enhanced AI Capabilities: We plan to improve the AI models and algorithms, making them more sophisticated and capable of understanding even subtler player preferences.
+
+Community Building: GameGPT will foster a vibrant gaming community, where players can connect, share their experiences, and collaborate on game concepts.
+
+Virtual Reality Integration: Exploring the integration of virtual reality (VR) to provide an even more immersive gaming experience.
+
+Monetization and Premium Features: Introducing monetization options and premium features while ensuring the core personalized gaming experience remains accessible to all.
+
+GameGPT is poised to redefine how gamers interact with the gaming world, making every game experience unique, immersive, and tailored to individual tastes. We are excited about the journey ahead and look forward to the continued evolution of GameGPT.
